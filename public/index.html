@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Mule API Test Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="css/stylesheet.css">
+
+    <link rel="stylesheet" href="css/d3Style.css">
+
+    <script src="lib/jquery-1.11.0.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+
+    <script src="lib/Dropit/dropit.js"></script>
+    <link rel="stylesheet" href="lib/Dropit/dropit.css" type="text/css" />
+
+    <script src="lib/d3.v3.min.js"></script>
+
+    <script src="lib/underscore-min.js"></script>
+
+    <script data-main="demo" src="lib/require.js"></script>
+</head>
+
+
+<body>
+
+<script type="text/javascript">
+    $(function() {
+        $('.menu').dropit();
+    });
+</script>
+
+<div class="container">
+    <div class="row border" id="loginHeader">
+        <input id="usernameText" type="text" name="username" placeholder="username">
+        <input id="passwordText" type="text" name="password" placeholder="password">
+        <input type="button" id="createUser"  value="Register">
+        <input type="button" id="loginUser" value="Login">
+
+        <div id="alerts"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row border" id="create">
+                <h3>Create Game</h3>
+                <input id="startG_name" type="text" name="gamename" placeholder="game name"><br>
+
+                <table class="ruleBundleChooser">
+                    <tr>
+                        <td>RuleBundle:</td>
+
+                        <td>
+                            <ul class="menu">
+                                <li>
+                                    <a id="startG_ruleBundle_dropper_label" href="#">Chooser Dropdown</a>
+                                    <ul id="startG_ruleBundle_dropper">
+                                    </ul>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+
+                <div class="border" id="maxPlayersDiv">
+
+                </div><br>
+
+                <div class="border" id="turnProgressSettingsDiv">
+                    TurnProgressStyle:
+                    <ul class="menu">
+                        <li>
+                            <a id="turnProgressSettings_dropper_label" href="#">Chooser Dropdown</a>
+                            <ul id="turnProgressSettings_dropper">
+                            </ul>
+                        </li>
+                    </ul>
+                    <br>
+                    Turn Time Limit (seconds):
+                    <input id="turnTimeLimit" type="text" name="turnTimeLimit" placeholder="turn time limit"><br>
+
+                </div><br>
+
+                <div class="border" id="customBoardSettingsDiv">
+
+                </div><br>
+
+                <input type="button" id="startGame" value="Start Game">
+            </div>
+            <div class="row border" id="gamesButtons">
+                <ul class="nav nav-tabs">
+                    <!-- Nav tabs -->
+                    <li class="active"><a href="#tabs-1" data-toggle="tab" id="getGames">All Games</a></li>
+                    <li><a href="#tabs-2" data-toggle="tab" id="getMyGames">My Games</a></li>
+                </ul>
+            </div>
+            <div class="row border" id="gamesList">
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tabs-1">tab1</div>
+                    <div class="tab-pane" id="tabs-2">tab2</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 border" id="gameInfo">
+            <h3>View Game Info</h3><br>
+
+            <div id="gameInfoArea"></div><br>
+
+
+            <div class="border">
+                <div id="d3RenderBox"></div>
+                <canvas id="gameInfoViewPort" width="500" height="500"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
